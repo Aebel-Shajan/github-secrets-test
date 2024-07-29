@@ -22,3 +22,9 @@ jobs:
 
     - name: Create secret file
       run: echo "{\"secret\":\"${{ secrets.MY_SECRET }}\"}" > secret.json
+
+    - name: Deploy to GitHub Pages
+      uses: actions/deploy-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        folder: .
